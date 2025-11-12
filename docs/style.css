@@ -1,0 +1,308 @@
+/* --- Zmienne i Reset --- */
+:root {
+    --color-primary: #DA291C; /* Czerwień - kolor pasujący do budownictwa/ostrzeżeń */
+    --color-secondary: #004488; /* Ciemny niebieski/granatowy */
+    --color-dark: #333;
+    --color-light: #f4f4f4;
+    --font-family: 'Arial', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--color-dark);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+h1, h2, h3 {
+    color: var(--color-dark);
+    margin-top: 0;
+}
+
+/* --- Przyciski (Buttony) --- */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+    border: 2px solid var(--color-primary);
+}
+
+.btn-primary:hover {
+    background-color: #a81c12;
+    border-color: #a81c12;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.btn-large {
+    padding: 15px 35px;
+    font-size: 1.1em;
+}
+
+/* --- 1. NAGŁÓWEK / NAWIGACJA --- */
+.header {
+    background-color: white;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    background-image: url("docs/heros-image.png");
+}
+
+.nav-links a:not(.btn) {
+    text-decoration: none;
+    color: var(--color-dark);
+    margin-left: 25px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover:not(.btn) {
+    color: var(--color-primary);
+}
+
+/* --- 2. SEKCJA GŁÓWNA (HERO) --- */
+.hero-section {
+    /* Zmienione na czysty biały kolor */
+    background-color: #ffffff;
+    padding: 100px 0;
+    text-align: left;
+}
+
+.hero-layout {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 50%;
+}
+
+.hero-image {
+    flex: 1;
+    max-width: 50%;
+}
+
+.hero-text h1 {
+    font-size: 2.8em;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.usp-list {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-weight: bold;
+    color: var(--color-dark);
+}
+
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* --- 3. SEKCJA USŁUGI (GRID) --- */
+.uslug-section {
+    text-align: center;
+}
+
+.uslug-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.usluga-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    transition: transform 0.3s;
+}
+
+.usluga-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* --- 4. DLACZEGO MY (FEATURE BLOCK) --- */
+.dlaczego-section {
+    background-color: #fff;
+}
+
+.feature-layout {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.feature-layout:nth-child(even) {
+    flex-direction: row-reverse; /* W Nextly sekcje są przemienne */
+}
+
+.feature-image, .feature-text {
+    flex: 1;
+}
+
+.feature-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-text li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1.1em;
+}
+
+.feature-text li:last-child {
+    border-bottom: none;
+}
+
+/* --- 5. CTA BANNER --- */
+.cta-banner {
+    background-color: var(--color-secondary);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.cta-content h2 {
+    color: white;
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.cta-banner .btn-secondary {
+    margin-top: 20px;
+    background-color: white;
+    color: var(--color-secondary);
+    border-color: white;
+}
+
+.cta-banner .btn-secondary:hover {
+    background-color: var(--color-light);
+}
+
+/* --- 6. STOPKA I KONTAKT --- */
+.footer {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    padding: 50px 0 15px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.footer-content h4 {
+    color: white;
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.footer-form input, .footer-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.footer-form button {
+    width: 100%;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    font-size: 0.9em;
+}
+
+/* --- Media Queries dla responsywności (podstawowe) --- */
+@media (max-width: 768px) {
+    .hero-layout, .feature-layout, .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text, .hero-image, .feature-image, .feature-text {
+        max-width: 100%;
+    }
+
+    .hero-text h1 {
+        font-size: 2em;
+    }
+
+    .nav-content {
+        flex-direction: column;
+    }
+    .nav-links {
+        padding-top: 15px;
+    }
+    .nav-links a {
+        margin: 0 10px;
+    }
+
+    .usp-list {
+        justify-content: center;
+    }
+}
